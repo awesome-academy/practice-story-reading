@@ -1,0 +1,44 @@
+@import "color_var";
+
+/* header */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+header{
+  background-color: $header-top;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.center{
+  text-align: center;
+  background-color: $header-bot;
+}
+
+/* footer */
+footer{
+  background-color: $header-top;
+  height: auto;
+  span{
+    font-weight: bold;
+  }
+  p{
+    text-align: justify;
+  }
+}
+
+body{
+  background: $white url(body-bg-tl.jpg) no-repeat top;
+}
