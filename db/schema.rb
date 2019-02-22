@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_21_040951) do
+ActiveRecord::Schema.define(version: 2019_02_22_021647) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -24,22 +24,20 @@ ActiveRecord::Schema.define(version: 2019_02_21_040951) do
     t.text "image"
     t.text "content"
     t.integer "status"
-    t.bigint "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["story_id", "created_at"], name: "index_chapters_on_story_id_and_created_at"
-    t.index ["story_id"], name: "index_chapters_on_story_id"
+    t.integer "story_id"
+    t.index ["created_at"], name: "index_chapters_on_story_id_and_created_at"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.integer "commentable_id"
     t.string "commentable_type"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.integer "user_id"
+    t.index ["created_at"], name: "index_comments_on_user_id_and_created_at"
   end
 
   create_table "feedbacks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,14 +48,12 @@ ActiveRecord::Schema.define(version: 2019_02_21_040951) do
   end
 
   create_table "likeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["story_id", "created_at"], name: "index_likeds_on_story_id_and_created_at"
-    t.index ["story_id"], name: "index_likeds_on_story_id"
-    t.index ["user_id", "created_at"], name: "index_likeds_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_likeds_on_user_id"
+    t.integer "user_id"
+    t.integer "story_id"
+    t.index ["created_at"], name: "index_likeds_on_story_id_and_created_at"
+    t.index ["created_at"], name: "index_likeds_on_user_id_and_created_at"
   end
 
   create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,22 +69,19 @@ ActiveRecord::Schema.define(version: 2019_02_21_040951) do
     t.string "author"
     t.integer "process"
     t.string "status"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_stories_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_stories_on_user_id"
+    t.integer "user_id"
+    t.index ["created_at"], name: "index_stories_on_user_id_and_created_at"
   end
 
   create_table "story_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "category_id"
-    t.bigint "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id", "created_at"], name: "index_story_categories_on_category_id_and_created_at"
-    t.index ["category_id"], name: "index_story_categories_on_category_id"
-    t.index ["story_id", "created_at"], name: "index_story_categories_on_story_id_and_created_at"
-    t.index ["story_id"], name: "index_story_categories_on_story_id"
+    t.integer "category_id"
+    t.integer "story_id"
+    t.index ["created_at"], name: "index_story_categories_on_category_id_and_created_at"
+    t.index ["created_at"], name: "index_story_categories_on_story_id_and_created_at"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,20 +89,11 @@ ActiveRecord::Schema.define(version: 2019_02_21_040951) do
     t.string "account"
     t.string "email"
     t.integer "status"
-    t.bigint "permission_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.index ["permission_id", "created_at"], name: "index_users_on_permission_id_and_created_at"
-    t.index ["permission_id"], name: "index_users_on_permission_id"
+    t.integer "permission_id"
+    t.index ["created_at"], name: "index_users_on_permission_id_and_created_at"
   end
 
-  add_foreign_key "chapters", "stories"
-  add_foreign_key "comments", "users"
-  add_foreign_key "likeds", "stories"
-  add_foreign_key "likeds", "users"
-  add_foreign_key "stories", "users"
-  add_foreign_key "story_categories", "categories"
-  add_foreign_key "story_categories", "stories"
-  add_foreign_key "users", "permissions"
 end
