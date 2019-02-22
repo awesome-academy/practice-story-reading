@@ -1,0 +1,24 @@
+en:
+  helpers:
+    application:
+      title: "STORY"
+  layouts:
+    header:
+      story: "STORY"
+      home: "Home"
+      list: "List"
+      categories: "Categories"
+      login: "Login"
+      signup: "Sign up"
+      english: "English"
+      description: "Read online stories, read story books, good stories. Fully integrated and constantly updated ^^"
+    footer:
+      about: "About"
+      description: "Online Stories - Read Free Online Stories | Good Stories, New Stories. Website is always updated with new series of special categories such as first stories, swordplay, teen stories, fastest novels..."
+      contact: "Contact"
+      email: "Email: story.framgia@gmail.com"
+      terms: "Terms of use"
+  static_pages:
+    home:
+      home: "Home page"
+      description: "Online Stories - Read Free Online Stories | Good Stories, New Stories."

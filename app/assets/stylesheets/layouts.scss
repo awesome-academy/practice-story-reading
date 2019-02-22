@@ -42,3 +42,7 @@ footer{
 body{
   background: $white url(body-bg-tl.jpg) no-repeat top;
 }
+
+.min_body{
+  min-height: 365px;
+}
