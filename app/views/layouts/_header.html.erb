@@ -1,43 +1,43 @@
 <header>
   <div class = "container">
-    <%= link_to "TTT", root_path, id: "logo" %>
+    <%= link_to t("layout.header.story"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Trang chủ", root_path %></li>
+        <li><%= link_to t("layouts.header.home"), root_path %></li>
         <li class="dropdown">
           <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
-            <%= "Danh sách" %><b class="caret"></b>
+            <%= t "layouts.list" %><b class="caret"></b>
           <% end %>
           <ul class="dropdown-menu">
-            <li><%= link_to "loại 1", "#" %></li>
-            <li><%= link_to "loại ...", "#" %></li>
+            <li><%= link_to t("layouts.header.list"), "#" %></li>
+            <li><%= link_to t("layouts.header.list"), "#" %></li>
           </ul>
         </li>
         <li class="dropdown">
           <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
-            <%= "Thể loại" %><b class="caret"></b>
+            <%= t "layouts.header.categories" %><b class="caret"></b>
           <% end %>
           <ul class="dropdown-menu">
-            <li><%= link_to "Thể loại 1", "#" %></li>
-            <li><%= link_to "Thể loại ...", "#" %></li>
+            <li><%= link_to t("layouts.header.categories"), "#" %></li>
+            <li><%= link_to t("layouts.header.categories"), "#" %></li>
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <li>
-        <%= link_to "Đăng ký", "#" %>
-      </li>
+        <%= link_to t("layouts.header.english"), locale:"en" %>
         <li>
           <%= link_to "#" do %>
-            <%= "Đăng nhập" %>
+            <%= t "layouts.header.login" %>
             <span class="glyphicon glyphicon-log-in"></span>
           <% end %>
+        </li>
+        <li>
+          <%= link_to t("layouts.header.signup"), "#" %>
         </li>
       </ul>
     </nav>
   </div>
 </header>
 <div class="center">
-  <p>Đọc truyện online, đọc truyện chữ, truyện hay. 
-    Tổng hợp đầy đủ và cập nhật liên tục.</p>
+  <p><%= t "layouts.header.description" %></p>
 </div>
