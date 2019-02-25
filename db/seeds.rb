@@ -3,10 +3,22 @@ Permission.create!(name: "uploader")
 Permission.create!(name: "admin")
 
 User.create!(name: "Le Duc Anh",
-  email: "leducanh12011997@gmail.com",
+  email: "admin@gmail.com",
   account: "admin",
   password: "111111",
-  permission_id: 1)
+  permission_id: 3)
+
+User.create!(name: "Uploader",
+  email: "uploader@gmail.com",
+  account: "uploader",
+  password: "111111",
+  permission_id: 2)
+
+User.create!(name: "User",
+    email: "user@gmail.com",
+    account: "user",
+    password: "111111",
+    permission_id: 1)
 
 user = User.first
 

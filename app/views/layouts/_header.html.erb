@@ -24,33 +24,38 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to stories_path do %>
-            <%= t "layouts.header.story_manager" %>
-            <span class="glyphicon glyphicon-file"></span>
+        <% if logged_in? %>
+          <% if session[:permission_id] == 3 %>
+            <%= render "layouts/header_admin" %>
+          <% elsif session[:permission_id] == 2 %>
+            <%= render "layouts/header_uploader" %>
           <% end %>
-        </li>
-        <li>
-          <%= link_to "#" do %>
-            <%= t "layouts.header.category_manager" %>
-            <span class="glyphicon glyphicon-list-alt"></span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "#" do %>
-            <%= t "layouts.header.user_manager" %>
-            <span class="glyphicon glyphicon-user"></span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "#" do %>
-            <%= t "layouts.header.login" %>
-            <span class="glyphicon glyphicon-log-in"></span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to t("layouts.header.signup"), signup_path %>
-        </li>
+          <li class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+              <span class="glyphicon glyphicon-user"></span>
+              <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li class="divider"></li>
+              <li>
+                <%= link_to logout_path, method: :delete do %>
+                  <%= t "layouts.header.logout" %>
+                  <span class="glyphicon glyphicon-log-out"></span>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to login_path do %>
+              <%= t "layouts.header.login" %>
+              <span class="glyphicon glyphicon-log-in"></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to t("layouts.header.signup"), signup_path %>
+          </li>
+        <% end %>
         <li>
           <%= link_to image_tag("icon_en.png", class: "icon_en"), locale:"en" %>
         </li>

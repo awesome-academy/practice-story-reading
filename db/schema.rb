@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_023402) do
+ActiveRecord::Schema.define(version: 2019_02_26_094439) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2019_02_26_023402) do
     t.string "name"
     t.text "image"
     t.text "content"
-    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "story_id"
@@ -67,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_023402) do
     t.text "image"
     t.text "description"
     t.string "author"
-    t.integer "process"
+    t.integer "process", default: 0
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -88,11 +87,11 @@ ActiveRecord::Schema.define(version: 2019_02_26_023402) do
     t.string "name"
     t.string "account"
     t.string "email"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.integer "permission_id"
+    t.integer "permission_id", default: 1
     t.index ["account"], name: "index_users_on_account", unique: true
     t.index ["created_at"], name: "index_users_on_permission_id_and_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
