@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_02_22_021647) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.integer "permission_id"
+    t.integer "password"
     t.index ["created_at"], name: "index_users_on_permission_id_and_created_at"
   end
 

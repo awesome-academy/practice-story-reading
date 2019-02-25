@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <h3><%= t "stories.index.stories_list" %></h3>
+    <%= paginate @stories, theme: "twitter-bootstrap-3" %>
+    <table class="table table-striped">
+      <tr>
+        <th><%= t "stories.index.id" %></th>>
+        <th><%= t "stories.index.name" %></th>
+        <th><%= t "stories.index.author" %></th>
+        <th><%= t "stories.index.description" %></th>
+        <th><%= t "stories.index.process" %></th>
+        <th><%= t "stories.index.status" %></th>
+      </tr>
+      <% @stories.each do |f| %>
+        <tr>
+          <td><%= f.id %></td>
+          <td><%= f.name %></td>
+          <td><%= f.author %></td>
+          <td><%= f.description %></td>
+          <td>      
+            <% if f.process == 0 %>
+              <button class="btn btn-xs btn-warning">
+                <%= t "stories.index.writing" %>
+              </button>
+            <% else %>
+              <button class="btn btn-xs btn-success">
+                <%= t "stories.index.done" %>
+              </button>
+            <% end %>
+          </td>
+          <td>
+            <% if f.status == "0" %>
+              <button class="btn btn-xs btn-danger">
+                <%= t "stories.index.hidden" %>
+              </button>
+            <% else %>
+              <button class="btn btn-xs btn-success">
+                <%= t "stories.index.active" %>
+              </button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <%= paginate @stories, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>
