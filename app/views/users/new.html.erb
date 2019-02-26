@@ -1,0 +1,28 @@
+<% provide :title, t("users.new.sign_up") %>
+<h1 class="text-center"><%=  t "users.new.sign_up" %></h1>
+
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with model: @user, url: signup_path do |f| %>
+      <%= render "shared/error_messages" %>
+
+      <%= f.label :name, t("users.new.name")%>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :email, t("users.new.email") %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :account, t("users.new.account") %>
+      <%= f.text_field :account, class: "form-control" %>
+
+      <%= f.label :password, t("users.new.password") %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :password_confirmation, t("users.new.confirmation") %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <br>
+      <%= f.submit t("users.new.create_account"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<br >

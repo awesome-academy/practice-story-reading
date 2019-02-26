@@ -1,5 +1,5 @@
 class Story < ApplicationRecord
-  belongs_to :user_id
+  belongs_to :users, class_name: User.ids, optional: true
 
   has_many :comments, as: :commentable
   has_many :chapters

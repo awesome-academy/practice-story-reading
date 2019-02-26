@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_22_021647) do
+ActiveRecord::Schema.define(version: 2019_02_26_023402) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -93,8 +93,9 @@ ActiveRecord::Schema.define(version: 2019_02_22_021647) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.integer "permission_id"
-    t.integer "password"
+    t.index ["account"], name: "index_users_on_account", unique: true
     t.index ["created_at"], name: "index_users_on_permission_id_and_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
