@@ -26,6 +26,9 @@ header{
   text-align: center;
   background-color: $header-bot;
 }
+.icon_en{
+  height: 20px;
+}
 
 /* footer */
 footer{
@@ -40,9 +43,12 @@ footer{
 }
 
 body{
-  background: $white url(body-bg-tl.jpg) no-repeat top;
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 0;
 }
 
 .min_body{
-  min-height: 365px;
+  min-height: 405px;
+  padding-top:20px;
 }

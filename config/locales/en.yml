@@ -12,6 +12,9 @@ en:
       signup: "Sign up"
       english: "English"
       description: "Read online stories, read story books, good stories. Fully integrated and constantly updated ^^"
+      story_manager: "Story manager"
+      category_manager: "Category manager"
+      user_manager: "User manager"
     footer:
       about: "About"
       description: "Online Stories - Read Free Online Stories | Good Stories, New Stories. Website is always updated with new series of special categories such as first stories, swordplay, teen stories, fastest novels..."
@@ -22,3 +25,26 @@ en:
     home:
       home: "Home page"
       description: "Online Stories - Read Free Online Stories | Good Stories, New Stories."
+  stories:
+    stories:
+      hot_story: "Hot story"
+      stories_newest: "Stories newest"
+    index:
+      stories_list: "Story list"
+      id: "ID"
+      name: "Story name"
+      author: "Author"
+      description: "Description"
+      process: "Process"
+      status: "Status"
+      writing: "writing"
+      done: "done"
+      blocked: "hidden"
+      actice: "active"
+  views:
+    pagination:
+      truncate: "..."
+      first: "First"
+      last: "last"
+      next: "next"
+      previous: "prev"
