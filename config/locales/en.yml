@@ -15,6 +15,8 @@ en:
       story_manager: "Story manager"
       category_manager: "Category manager"
       user_manager: "User manager"
+      logout: "Logout"
+      posted: "Posted"
     footer:
       about: "About"
       description: "Online Stories - Read Free Online Stories | Good Stories, New Stories. Website is always updated with new series of special categories such as first stories, swordplay, teen stories, fastest novels..."
@@ -57,4 +59,19 @@ en:
       password: "Password"
       confirmation: "Confirmation"
       create_account: "Create my account"
-      
+  shared:
+    error_messages:
+      the_form_contains: "The form contains "
+      error: "error"
+  flash:
+    success:
+      welcome_to: "Welcome to the STORY"
+    danger:
+      failed: "failed"
+      login_invalid: "Invalid username/password combination"
+  sessions:
+    new:
+      login: "Log in"
+      signup_now: "Sign up now!"
+      account: "Username"
+      password: "Password"

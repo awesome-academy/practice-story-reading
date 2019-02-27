@@ -17,5 +17,7 @@ class ChangeModel < ActiveRecord::Migration[5.2]
     add_column :story_categories, :story_id, :integer
     add_column :chapters, :story_id, :integer
     add_column :comments, :user_id, :integer
+
+    remove_column :chapters, :status
   end
 end
