@@ -34,7 +34,7 @@
         <% @chapters.each do |chapter| %>
           <div class="col-sm-4">
             <span class="glyphicon glyphicon-tag"></span>
-            <%= link_to chapter.name %>
+            <%= link_to chapter.name, chapter %>
           </div>
           <div class="col-sm-2">
             <%= chapter.created_at.strftime("%F") %>

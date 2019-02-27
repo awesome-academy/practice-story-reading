@@ -76,6 +76,7 @@ en:
     danger:
       failed: "failed"
       login_invalid: "Invalid username/password combination"
+      not_found_chapter: "Not found"
   sessions:
     new:
       login: "Log in"
