@@ -2,6 +2,7 @@ static_pages:
   number_stories: 8
 stories:
   number_stories: 10
+  number_hot_stories: 5
 user_validates:
   name_max_length: 50
   account_max_length: 50

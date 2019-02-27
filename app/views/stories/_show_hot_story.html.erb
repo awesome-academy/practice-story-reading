@@ -1,0 +1,11 @@
+<h3><%= t "stories.show.hot_stories" %></h3>
+<table>
+  <% @stories.each do |story| %>
+    <tr>
+      <td>
+        <%= link_to story.name, story %><br>
+        <%= story.author %><hr>
+      </td>
+    </tr>
+  <% end %>
+</table>

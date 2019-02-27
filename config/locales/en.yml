@@ -43,6 +43,13 @@ en:
       done: "done"
       blocked: "hidden"
       actice: "active"
+    show:
+      hot_stories: "Hot stories"
+      story_info: "Story info"
+      author: "Author: "
+      category: "Category: "
+      description: "Description: "
+      chapters: "Chapters..."
   views:
     pagination:
       truncate: "..."
