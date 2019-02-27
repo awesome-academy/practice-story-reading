@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root "static_pages#show", page: "home"
-  get "user/new"
-  get "user/show"
   get "/login", to: "sessions#new"
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"

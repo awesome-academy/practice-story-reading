@@ -27,3 +27,18 @@ input {
     color: $red;
   }
 }
+
+// Show a story
+
+.show_story{
+  font-size: 16px;
+  td{
+    padding: 0 10px 0 10px;
+  }
+}
+
+.a_story_name{
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+}

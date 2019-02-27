@@ -1,0 +1,39 @@
+<% provide :title, @story.name %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <table class="show_story">
+        <tr>
+          <td colspan="2">
+            <h3><%= t "stories.show.story_info" %></h3>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2">
+            <%= link_to image_tag(@story.image), "#" %>
+          </td>
+          <td class="a_story_name">
+            <span>
+              <%= @story.name.upcase %>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><%= t "stories.show.author" %></strong>
+            <i><%= @story.author %></i><br>
+            <strong><%= t "stories.show.category" %></strong>
+            <i><%= "..." %></i><br>
+            <strong><%= t "stories.show.description" %></strong>
+            <i><%= @story.description %></i><br>
+          </td>
+        </tr>
+      </table>
+      <h3><%= t "stories.show.chapters" %></h3>
+    </div>
+    <div class="col-sm-3">
+      <%= render "stories/show_hot_story" %>
+    </div>
+  </div>
+</div>
+<br>
