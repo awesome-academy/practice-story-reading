@@ -3,8 +3,11 @@ static_pages:
 stories:
   number_stories: 10
   number_hot_stories: 5
+  number_chapters: 30
+  it_fail: 0
 user_validates:
   name_max_length: 50
   account_max_length: 50
   email_max_length: 255
   password_min_length: 6
+

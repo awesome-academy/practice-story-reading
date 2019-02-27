@@ -30,6 +30,18 @@
         </tr>
       </table>
       <h3><%= t "stories.show.chapters" %></h3>
+      <div class="col-sm-12">
+        <% @chapters.each do |chapter| %>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-tag"></span>
+            <%= link_to chapter.name %>
+          </div>
+          <div class="col-sm-2">
+            <%= chapter.created_at.strftime("%F") %>
+          </div>
+        <% end %>
+      </div>
+      <%= paginate @chapters, theme: "twitter-bootstrap-3" %>
     </div>
     <div class="col-sm-3">
       <%= render "stories/show_hot_story" %>

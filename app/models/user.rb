@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :permissions, class_name: Permission.name, optional: true
+  belongs_to :permission
 
   has_many :comments
   has_many :stories

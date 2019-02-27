@@ -11,14 +11,13 @@
         <th><%= t "stories.index.process" %></th>
         <th><%= t "stories.index.status" %></th>
       </tr>
-      <% @stories.each do |f| %>
+      <% @stories.each do |story| %>
         <tr>
-          <td><%= f.id %></td>
-          <td><%= f.name %></td>
-          <td><%= f.author %></td>
-          <td><%= f.description %></td>
+          <td><%= link_to story.name, story %></td>
+          <td><%= story.author %></td>
+          <td><%= story.description %></td>
           <td>      
-            <% if f.process == 0 %>
+            <% if story.process == Settings.stories.it_fail %>
               <button class="btn btn-xs btn-warning">
                 <%= t "stories.index.writing" %>
               </button>
@@ -29,7 +28,7 @@
             <% end %>
           </td>
           <td>
-            <% if f.status == "0" %>
+            <% if story.status == Settings.stories.it_fail %>
               <button class="btn btn-xs btn-danger">
                 <%= t "stories.index.hidden" %>
               </button>
