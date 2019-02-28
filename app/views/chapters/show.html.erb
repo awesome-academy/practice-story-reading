@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row content">
+    <div>
+      <div class="panel-body text-center story_name">
+        <%= link_to @chapter.story.name.upcase, story_path(@chapter.story) %>
+      </div>
+      <div class="panel-body text-center chapter_name">
+        <%= @chapter.name %>
+      </div>
+      <div class="panel-body text-center">
+        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+          <span class="glyphicon glyphicon-hand-left"></span>
+        <% end %>
+        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+          <span class="glyphicon glyphicon-th-list"></span>
+        <% end %>
+        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+          <span class="glyphicon glyphicon-hand-right"></span>
+        <% end %>
+      </div>
+      <div class="row">
+        <% if @chapter.image %>
+          <div class="col-sm-3">
+            <div class="well">
+            <%= image_tag @chapter.image %>
+            </div>
+          </div>
+        <% end %>
+        <div class="content_chapter">
+          <%= @chapter.content %>
+        </div>
+      <div class="panel-body text-center">
+        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+          <span class="glyphicon glyphicon-hand-left"></span>
+        <% end %>
+        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+          <span class="glyphicon glyphicon-th-list"></span>
+        <% end %>
+        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+          <span class="glyphicon glyphicon-hand-right"></span>
+        <% end %>
+      </div>
+      </div>
+    </div>
+</div>
