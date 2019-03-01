@@ -22,38 +22,54 @@ User.create!(name: "User",
 
 user = User.first
 
-3.times do |n|
+20.times do |n|
     name = Faker::Name.name
-    image = "vo-thuong-sat-than.jpg"
+    image = Faker::Avatar.image
     author = Faker::Name.name
     description = Faker::Lorem.sentence(5)
-    process = 0
-    status = 1
+    process = Faker::Number.between(0, 1)
+    status = Faker::Number.between(0, 1)
     user_id = 1
     s = user.stories.build(name: name, image: image, author: author,
       description: description, process: process, status: status, user_id: user_id)
     s.save
 end
-3.times do |n|
+
+20.times do |n|
   name = Faker::Name.name
-  image = "vo-thuong-sat-than.jpg"
+  image = Faker::Avatar.image
   author = Faker::Name.name
   description = Faker::Lorem.sentence(5)
-  process = 1
-  status = 0
-  user_id = 1
+  process = Faker::Number.between(0, 1)
+  status = Faker::Number.between(0, 1)
   s = user.stories.build(name: name, image: image, author: author,
-    description: description, process: process, status: status, user_id: user_id)
+    description: description, process: process, status: status)
   s.save
 end
 
 story = Story.first
 
 50.times do |n|
-  name = Faker::Name.name
-  image = "vo-thuong-sat-than.jpg"
-  content = "Content"
+  name = "Chapter " + n.to_s + ": " + Faker::Name.name
+  image = Faker::Avatar.image
+  content = Faker::Lorem.paragraphs
   story_id = 1
   s = story.chapters.build(name: name, image: image, content: content, story_id: story_id)
+  s.save
+end
+
+50.times do |n|
+  name = "Chapter " + n.to_s + ": " + Faker::Name.name
+  image = Faker::Avatar.image
+  content = Faker::Lorem.paragraphs
+  story_id = 2
+  s = story.chapters.build(name: name, image: image, content: content, story_id: story_id)
+  s.save
+end
+
+20.times do |n|
+  name = Faker::Name.name
+  description = Faker::Lorem.sentence(5)
+  s = Category.create(name: name, description: description)
   s.save
 end

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <h3><%= t "categories.index.categories_list" %></h3>
+    <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+    <table class="table table-striped">
+      <tr>
+        <th><%= t "categories.index.name" %></th>
+        <th><%= t "categories.index.description" %></th>
+        <th><%= t "categories.index.action" %></th>
+      </tr>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= link_to category.name, category %></td>
+          <td><%= category.description %></td>
+          <td>
+            <button class="btn btn-xs btn-warning">
+              <%= t "categories.index.edit" %>
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

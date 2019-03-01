@@ -33,7 +33,6 @@ en:
       stories_newest: "Stories newest"
     index:
       stories_list: "Story list"
-      id: "ID"
       name: "Story name"
       author: "Author"
       description: "Description"
@@ -83,3 +82,12 @@ en:
       signup_now: "Sign up now!"
       account: "Username"
       password: "Password"
+  categories:
+    index:
+      categories_list: "Categories list"
+      name: "Category name"
+      description: "Description"
+      action: "Action"
+      edit: "Edit"
+    categories:
+      categories: "Categories"
