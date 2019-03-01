@@ -1,6 +1,10 @@
+<% provide :title, @chapter.name %>
 <div class="container">
   <div class="row content">
     <div>
+      <% if flash[:danger] %>
+        <div class="alert alert-danger"><%= flash[:danger] %></div>
+      <% end %>
       <div class="panel-body text-center story_name">
         <%= link_to @chapter.story.name.upcase, story_path(@chapter.story) %>
       </div>
@@ -8,13 +12,12 @@
         <%= @chapter.name %>
       </div>
       <div class="panel-body text-center">
-        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+        <%= link_to get_previous_chapter(@chapter), class: "btn btn-sm btn-success" do %>
           <span class="glyphicon glyphicon-hand-left"></span>
         <% end %>
-        <%= link_to "#", class: "btn btn-lg btn-success" do %>
-          <span class="glyphicon glyphicon-th-list"></span>
-        <% end %>
-        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+        <%= select_tag "select_chapter", options_for_select(@chapters.pluck(:name, :id), 
+          params[:id]), class: "select_chapters btn btn-sm btn-success" %>
+        <%= link_to get_next_chapter(@chapter), class: "btn btn-sm btn-success" do %>
           <span class="glyphicon glyphicon-hand-right"></span>
         <% end %>
       </div>
@@ -29,17 +32,16 @@
         <div class="content_chapter">
           <%= @chapter.content %>
         </div>
+      </div>
       <div class="panel-body text-center">
-        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+        <%= link_to get_previous_chapter(@chapter), class: "btn btn-sm btn-success" do %>
           <span class="glyphicon glyphicon-hand-left"></span>
         <% end %>
-        <%= link_to "#", class: "btn btn-lg btn-success" do %>
-          <span class="glyphicon glyphicon-th-list"></span>
-        <% end %>
-        <%= link_to "#", class: "btn btn-lg btn-success" do %>
+        <%= select_tag "select_chapter", options_for_select(@chapters.pluck(:name, :id), 
+          params[:id]), class: "select_chapters btn btn-sm btn-success" %>
+        <%= link_to get_next_chapter(@chapter), class: "btn btn-sm btn-success" do %>
           <span class="glyphicon glyphicon-hand-right"></span>
         <% end %>
-      </div>
       </div>
     </div>
 </div>
