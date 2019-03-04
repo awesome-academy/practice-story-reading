@@ -1,0 +1,13 @@
+<li class="dropdown">
+  <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+    <%= t "categories.categories.categories" %>
+    <b class="caret"></b>
+  <% end %>
+  <ul class="dropdown-menu">
+    <% categories_list.each do |category| %>
+      <li>
+        <%= link_to category, "#" %>
+      </li>
+    <% end %>
+  </ul>
+</li>
